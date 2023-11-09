@@ -142,73 +142,73 @@ WORKING-STORAGE SECTION.
 
 01 Seed		Pic  9(9) Comp.
 
-01 Obj1		Pic x(47) Value 
+01 Obj1		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"33111111111 33111111111 33111111111 33111111111".
 01 Obj1-No-Rot	Pic 9(4) Comp Value 1.
 
-01 Obj2		Pic x(47) Value 
+01 Obj2		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"32111001000 23010010110 32100111000 23110100100".
 01 Obj2-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj3		Pic x(47) Value 
+01 Obj3		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"32111100000 23110010010 32001111000 23100100110".
 01 Obj3-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj4		Pic x(47) Value 
+01 Obj4		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"13100100100 31111000000 13100100100 31111000000".
 01 Obj4-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj5		Pic x(47) Value 
+01 Obj5		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"11100000000 11100000000 11100000000 11100000000".
 01 Obj5-No-Rot	Pic 9(4) Comp Value 1.
 
-01 Obj6		Pic x(47) Value 
+01 Obj6		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"32110011000 23010110100 32110011000 23010110100".
 01 Obj6-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj7		Pic x(47) Value 
+01 Obj7		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"32011110000 23100110010 32011110000 23100110010".
 01 Obj7-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj8		Pic x(47) Value 
+01 Obj8		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"22110110000 22110110000 22110110000 22110110000".
 01 Obj8-No-Rot	Pic 9(4) Comp Value 1.
 
-01 Obj9		Pic x(47) Value 
+01 Obj9		Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"32111010000 23010110010 32010111000 23100110100".
 01 Obj9-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj10	Pic x(47) Value 
+01 Obj10	Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"12100100000 21110000000 12100100000 21110000000".
 01 Obj10-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj11	Pic x(47) Value 
+01 Obj11	Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"22110010000 22010110000 22100110000 22110100000".
 01 Obj11-No-Rot	Pic 9(4) Comp Value 0.
 
-01 Obj12	Pic x(47) Value 
+01 Obj12	Pic x(47) Value
 *                  123456789   123456789   123456789   123456789
 *               012345678901234567890123456789012345678901234567
 		"22110100000 22110010000 22010110000 22100110000".
@@ -495,7 +495,7 @@ BEGIN.
 
 		Evaluate KEY-CODE
 
-			When K-TIMEOUT  
+			When K-TIMEOUT
 				     If Wait-Count = 0
 					     Perform MOVE-DOWN
 					     If Down-OK = 0
@@ -505,7 +505,7 @@ BEGIN.
 
 			When K-N4
 			When K-LEFT  Perform MOVE-LEFT
-		
+
 			When K-N6
 			When K-RIGHT Perform MOVE-RIGHT
 
@@ -518,8 +518,8 @@ BEGIN.
 			When K-DOWN
 			When K-SPACE Perform MOVE-TO-BOTTOM
 
-			When K-PF1 
-			 	Move  8 to LinX
+			When K-PF1
+				Move  8 to LinX
 				Move  2 to ColY
 				If Crazy-Colors = 1 Then
 				 Move 0 to Crazy-Colors
@@ -589,7 +589,7 @@ BEGIN.
 		If Py < (C-Dim-Y - OBJ-Y + 1)
 			Perform TRY-MOVE-DOWN
 		End-If
-	
+
 	End-Perform.
 
 	Compute FrX = Px.
@@ -643,7 +643,7 @@ BEGIN.
 	End-If.
 
 
- 
+
 ********************
 MOVE-RIGHT SECTION.
 ********************
@@ -984,7 +984,7 @@ BEGIN.
 	Move 0 to CMP-OK.
 
 	Move C-DIM-Y to Idx-Y.
-	
+
 	Perform UNTIL Idx-Y < 1
 
 		Perform CHK-FOR-ENTIRE-LINE
@@ -1001,7 +1001,7 @@ BEGIN.
 	End-If.
 
 	If Bonus-OUT = 1
-		Call "SMG$PUT_CHARS" Using DISP 
+		Call "SMG$PUT_CHARS" Using DISP
 				By Descriptor "             "
 				By Reference  BONUS-X BONUS-Y
 		End-Call
@@ -1011,11 +1011,11 @@ BEGIN.
 *Bonus only if more than 1 line completed!
 	If Bonus > 1
 		Compute Bonus = Bonus - 1
-		Compute Points    = Points + 
+		Compute Points    = Points +
 				    (C-Line-Points * LEV-Factor(LEVEL) * Bonus)
 		Move 1 to Bonus-OUT
 		Compute Type-OUT = M_BOLD + M_BLINKING
-		Call "SMG$PUT_CHARS" Using DISP 
+		Call "SMG$PUT_CHARS" Using DISP
 				By Descriptor "*** BONUS ***"
 				By Reference  BONUS-X BONUS-Y
 				Omitted TYPE-OUT
@@ -1104,7 +1104,7 @@ BEGIN.
 		If T-EL(TIndX, TIndY) = 0
 			Perform DRAW-DELIMITER-CHAR
 		Else
-			Call "SMG$PUT_CHARS" Using DISP 
+			Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor " "
 					     By Reference LinX ColY
 					     Omitted M_Reversed
@@ -1142,7 +1142,7 @@ BEGIN.
 		If T-EL(TIndX, TIndY) = 0
 			Perform DRAW-DELIMITER-CHAR
 		Else
-			Call "SMG$PUT_CHARS" Using DISP 
+			Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor " "
 					     By Reference LinX ColY
 					     Omitted ReversedOUT
@@ -1214,7 +1214,7 @@ BEGIN.
 		If T-EL(TIndX, TIndY) = 0
 			Perform DRAW-DELIMITER-CHAR
 		Else
-			Call "SMG$PUT_CHARS" Using DISP 
+			Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor " "
 					     By Reference LinX ColY
 					     Omitted ReversedOUT
@@ -1233,19 +1233,19 @@ INFORM SECTION.
 BEGIN.
 
 	Move Points to O-Points.
-	Call "SMG$PUT_CHARS" Using DISP 
+	Call "SMG$PUT_CHARS" Using DISP
 				By Descriptor O-POINTS
 				By Reference  POINT-X POINT-Y
 				Omitted M_BOLD.
 
 	Move Level to O-Level.
-	Call "SMG$PUT_CHARS" Using DISP 
+	Call "SMG$PUT_CHARS" Using DISP
 				By Descriptor O-LEVEL
 				By Reference  LEVEL-X LEVEL-Y
 				Omitted M_BOLD.
 
 	Move CMP-Lines to O-Lines.
-	Call "SMG$PUT_CHARS" Using DISP 
+	Call "SMG$PUT_CHARS" Using DISP
 				By Descriptor O-LINES
 				By Reference  LINES-X LINES-Y
 				Omitted M_BOLD.
@@ -1390,13 +1390,13 @@ BEGIN.
 		Compute LinX = TIndY + PNO-Y - 1
 
 		If C-OBJ(O-Idx-Next, Rot)(Idx:1) = "1"
-			Call "SMG$PUT_CHARS" Using DISP 
+			Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor " "
 					     By Reference LinX ColY
 					     Omitted ReversedOUT
 			End-Call
 		Else
-			Call "SMG$PUT_CHARS" Using DISP 
+			Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor " "
 					     By Reference LinX ColY
 			End-Call
@@ -1503,7 +1503,7 @@ BEGIN.
 
 	Move  1 to LinX.
 	Move  2 to ColY.
-	Call "SMG$PUT_CHARS" Using DISP-L By Descriptor 
+	Call "SMG$PUT_CHARS" Using DISP-L By Descriptor
 					"Enter starting level (1-9): 1"
 				        By Reference  LINX COLY.
 
@@ -1886,7 +1886,7 @@ BEGIN.
 			End-If
 		Else
 			Perform SHOW-HIGH-SCORES
-			Display "SEE HIGH SCORES" Reversed Bold 
+			Display "SEE HIGH SCORES" Reversed Bold
 						  Line 23 Column 33 No
 			Accept ODG Protected With No Echo Line 24 Column 80
 		End-If
@@ -1911,11 +1911,11 @@ BEGIN.
 			Not At End
 				Move HIGH-Name		to HS-NAME(Idx-HS)
 				Move HIGH-Points	to HS-POINTS(Idx-HS)
-				Move HIGH-Lines		to HS-LINES(Idx-HS) 
-				Move HIGH-Entry		to HS-ENTRY(Idx-HS) 
-				Move HIGH-Level		to HS-LEVEL(Idx-HS) 
+				Move HIGH-Lines		to HS-LINES(Idx-HS)
+				Move HIGH-Entry		to HS-ENTRY(Idx-HS)
+				Move HIGH-Level		to HS-LEVEL(Idx-HS)
 				Move HIGH-Bonus		to HS-BONUS(Idx-HS)
-				Move HIGH-CPU		to HS-CPU(Idx-HS) 
+				Move HIGH-CPU		to HS-CPU(Idx-HS)
 		End-Read
 
 	End-Perform.
@@ -1971,9 +1971,9 @@ BEGIN.
 
 	Move Space		to HS-NAME(Idx)
 	Move Points		to HS-POINTS(Idx)
-	Move CMP-Lines		to HS-LINES(Idx) 
-	Move First-Level	to HS-ENTRY(Idx) 
-	Move Level		to HS-LEVEL(Idx) 
+	Move CMP-Lines		to HS-LINES(Idx)
+	Move First-Level	to HS-ENTRY(Idx)
+	Move Level		to HS-LEVEL(Idx)
 	Move Bonus-All		to HS-BONUS(Idx)
 	Move T-Cont		to HS-CPU(Idx).
 
@@ -2013,7 +2013,7 @@ BEGIN.
 		Move Idx-HS			to Z-Num
 
 		Move Space to Txt80
-		String  Z-Num ". " 
+		String  Z-Num ". "
 			HS-NAME(Idx-HS) "    " Z-Points "    " Z-Lines "    "
 			Z-Entry "   " Z-Level "    " Z-Bonus "     " Z-CPU
 			Delimited By Size Into Txt80
@@ -2025,7 +2025,7 @@ BEGIN.
 		End-If
 
 	End-Perform.
-	
+
 	Move All "-" to Txt80.
 	Display Txt80 Line 22 Column 1.
 
@@ -2034,7 +2034,7 @@ EDIT-PLAYER-NAME SECTION.
 ***************************
 BEGIN.
 
-	Display "Congratulations. You will enter into HIGH SCORES." 
+	Display "Congratulations. You will enter into HIGH SCORES."
 		Reversed Bold Line 23 Column 1.
 
 	Display "ENTER YOUR NAME" Bold Blinking Line 24 Column 1 No.
@@ -2058,7 +2058,7 @@ BEGIN.
 				Move C-Delim-C1 To Delim-Char
 				Compute Type-OUT = 0
 	End-If
-	Call "SMG$PUT_CHARS" Using DISP 
+	Call "SMG$PUT_CHARS" Using DISP
 					     By Descriptor Delim-Char
 					     By Reference LinX ColY
 					     Omitted Type-OUT
