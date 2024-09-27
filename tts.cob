@@ -109,7 +109,8 @@ WORKING-STORAGE SECTION.
 01 T-Cont       Pic  9(9) Comp Value 0.
 
 01 Time-Zero    Pic S9(9) Comp   Value  0.
-01 Wait-Unit    	  Comp-2 Value  0.008.
+01 Wait-Unit    	  Comp-1 Value  0.008.
+01 Wait-Type    Pic  9(5) Comp   Value  4.
 01 Max-Wait     Pic  9(4) Comp   Value  100.
 01 Wait-Count	Pic  9(4) Comp.
 
@@ -481,7 +482,7 @@ BEGIN.
 	Perform UNTIL TO-OUT = 1
 
 		If Wait-Count Not = 0 And To-OUT Not = 1
-			Call "LIB$WAIT" Using WAIT-UNIT End-Call
+			Call "LIB$WAIT" Using BY REFERENCE WAIT-UNIT, OMITTED, BY REFERENCE WAIT-TYPE End-Call
 		End-If
 		Call "SMG$READ_KEYSTROKE" Using KEYB, KEY-CODE, Omitted,
 						TIME-ZERO
